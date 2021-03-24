@@ -2,7 +2,7 @@
   "name": "hello-world-typescript-typeorm",
   "version": "0.0.1",
   "description": "Awesome project developed with TypeORM.",
-  "devDependencies": {t
+  "devDependencies": {
     "@types/node": "^8.0.29",
     "ts-node": "9.1.0",
     "typescript": "4.1.5"
