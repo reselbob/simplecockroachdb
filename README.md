@@ -36,11 +36,11 @@ Exit the CLI
 
 `\q`
 
-**Step 6:**
+**Step 6:** Install the Node.js dependency packages
 
 `npm install`
 
-**Step 7:**
+**Step 7:** Run the Node.js application
 
 `npm start`
 
