@@ -6,7 +6,7 @@ To run this demonstration project in Katacoda do the following
 
 ## Steps
 
-**Step 1:** Go the Katacoda Ubuntu Playground
+**Step 1:** Go to the Katacoda Ubuntu Playground
 
 `https://katacoda.com/courses/ubuntu/playground`
 
