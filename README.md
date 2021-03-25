@@ -3,7 +3,9 @@
 A project that demonstrates how to use [CockroachDB](cockroachlabs.com) with the [TypeOrm](https://typeorm.io/#/) to implement a multi-container cluster under Docker.
 
 ## Steps
-**Step 1:**
+**Step 1:** Set up the CockroachDB cluster under Docker-Compose
+
+`docker-compose up -d`
 
 Follow the instructions [here](https://www.cockroachlabs.com/docs/stable/start-a-local-cluster-in-docker-linux.html) to set up a multi-container cluster using Docker.
 
