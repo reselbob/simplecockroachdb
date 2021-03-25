@@ -14,11 +14,15 @@ To run this demonstration project in Katacoda do the following
 
 `git clone https://github.com/reselbob/simplecockroachdb.git`
 
-**Step 3:** Set up the CockroachDB cluster under Docker-Compose
+**Step 3:** Navigate to the source code directory
+
+`cd simplecockroachdb`
+
+**Step 4:** Set up the CockroachDB cluster under Docker-Compose
 
 `docker-compose up -d`
 
-**Step 4:** Create the `banks` database
+**Step 5** Create the `banks` database
 
 Access the cockroachdb CLI tool
 
@@ -32,11 +36,11 @@ Exit the CLI
 
 `\q`
 
-**Step 5:**
+**Step 6:**
 
 `npm install`
 
-**Step 6:**
+**Step 7:**
 
 `npm start`
 
