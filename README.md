@@ -22,7 +22,7 @@ To run this demonstration project in Katacoda do the following
 
 `docker-compose up -d`
 
-**Step 5** Create the `banks` database
+**Step 5** Create the `bank` database
 
 Access the cockroachdb CLI tool
 
