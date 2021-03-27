@@ -30,7 +30,7 @@ Access the cockroachdb CLI tool
 
 At the cockroachdb CLI command line enter:
 
-`CREATE DATABASE bank;`
+`CREATE DATABASE blogs;`
 
 Exit the CLI
 
@@ -48,19 +48,29 @@ You'll get output similar to the following
 
 ```text
 
-Inserting a new account into the database...
-Saved a new account.
-Printing balances from account 1.
-Account { id: 1, balance: 1000 }
-Inserting a new account into the database...
-Saved a new account.
-Printing balances from account 2.
-Account { id: 2, balance: 250 }
-Transferring 500 from account 1 to account 2.
-Transfer complete.
-Printing balances from account 1.
-Account { id: 1, balance: 500 }
-Printing balances from account 2.
-Account { id: 2, balance: 750 }
+Saving a new Writer into the database...
+Saved a new Writer: [object Object]
+Saving a new Writer into the database...
+Saved a new Writer: [object Object]
+Saving a new Writer into the database...
+Saved a new Writer: [object Object]
+Saving a new Writer into the database...
+Saved a new Writer: [object Object]
+Saving a new Writer into the database...
+Saved a new Writer: [object Object]
+Saving a new BlogEntry into the database...
+Saved a new BlogEntry: [object Object]
+.
+.
+.
+.
+Saving a new BlogEntry into the database...
+Saved a new BlogEntry: [object Object]
+Saving a new BlogEntry into the database...
+Saved a new BlogEntry: [object Object]
+Saving a new BlogEntry into the database...
+Saved a new BlogEntry: [object Object]
+Finished seeding
+
 
 ```

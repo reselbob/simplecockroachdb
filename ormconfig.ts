@@ -7,17 +7,8 @@ module.exports = {
   port: 26257,
   username: "root",
   password: "",
-  database: "bank",
+  database: "blogs",
   ssl: false,
-  /*
-  extra: {
-    ssl: {
-      rejectUnauthorized: false,
-    },
-  },
-  ssl: {
-     ca: fs.readFileSync('certs/cc-ca.crt').toString()
-   },*/
   synchronize: true,
   logging: false,
   entities: ["src/entity/**/*.ts"],
