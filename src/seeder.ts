@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { createConnection, Repository, Connection } from "typeorm";
+import { createConnection, Connection } from "typeorm";
 import * as faker from 'faker';
 import {Writer} from "./entity/Writer";
 import {BlogEntry} from "./entity/BlogEntry";
@@ -25,8 +25,8 @@ const setRandomBlogEntry = async (connection: Connection, writer: Writer) : Prom
     console.log("Saving a new BlogEntry into the database...");
 
     const blogEntry = new BlogEntry();
-    blogEntry.title = faker.lorem.words(3);
-    blogEntry.entry = faker.lorem.words(30)
+    blogEntry.title = faker.lorem.words(3).toUpperCase();
+    blogEntry.entry = faker.lorem.words(30);
     blogEntry.writer = writer;
     blogEntry.pubDate = faker.date.between('1/1/1999', '12/31/2020')
 
@@ -39,8 +39,7 @@ const setRandomBlogEntry = async (connection: Connection, writer: Writer) : Prom
 
 const getBlogEntriesByWriter = async (connection: Connection ): Promise<Array<Writer>> => {
     const repository = connection.getRepository(Writer);
-    const writers = await repository.find({ relations: ["blogEntries"] });
-    return writers;
+    return await repository.find({ relations: ["blogEntries"] });
 }
 
 createConnection().then(async (connection) => {
