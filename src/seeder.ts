@@ -11,7 +11,7 @@ const setRandomWriter = async (connection: Connection) : Promise<Writer> =>  {
     const writer = new Writer();
     writer.firstName = faker.name.firstName();
     writer.lastName = faker.name.lastName();
-    writer.email = `${writer.firstName}.${writer.lastName}@${faker.internet.domainName()}`
+    writer.email = `${writer.firstName}.${writer.lastName}@${faker.internet.domainName()}.${faker.internet.domainSuffix()}`
 
     await repository.save(writer);
 
@@ -37,6 +37,12 @@ const setRandomBlogEntry = async (connection: Connection, writer: Writer) : Prom
     return blogEntry
 }
 
+const getBlogEntriesByWriter = async (connection: Connection ): Promise<Array<Writer>> => {
+    const repository = connection.getRepository(Writer);
+    const writers = await repository.find({ relations: ["blogEntries"] });
+    return writers;
+}
+
 createConnection().then(async (connection) => {
     try {
         await connection.query("CREATE DATABASE blogs");
@@ -56,5 +62,11 @@ createConnection().then(async (connection) => {
         }
     }
 
-    console.log('Finished seeding');
+    const writersWithEntries = await getBlogEntriesByWriter(connection);
+
+    console.log('SAMPLE WRITER:\n');
+    //make some nice output
+    console.log(JSON.stringify(writersWithEntries[0],null, 4));
+
+    console.log('\nSeeder finished!\n');
 });

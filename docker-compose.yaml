@@ -5,12 +5,16 @@ services:
   crdb-0:
     container_name: crdb-0
     hostname: crdb-0
+    volumes:
+      - ./cockroach-data/crdb-0:/cockroach/cockroach-data
     image: cockroachdb/cockroach:latest
     command: start-single-node --cluster-name=example-haproxy --logtostderr=WARNING --log-file-verbosity=WARNING --insecure
 
   crdb-1:
     container_name: crdb-1
     hostname: crdb-1
+    volumes:
+      - ./cockroach-data/crdb-1:/cockroach/cockroach-data
     image: cockroachdb/cockroach:latest
     command: start --cluster-name=example-haproxy --logtostderr=WARNING --log-file-verbosity=WARNING --insecure --join=crdb-0
     depends_on:
@@ -19,6 +23,8 @@ services:
   crdb-2:
     container_name: crdb-2
     hostname: crdb-2
+    volumes:
+      - ./cockroach-data/crdb-2:/cockroach/cockroach-data
     image: cockroachdb/cockroach:latest
     command: start --cluster-name=example-haproxy --logtostderr=WARNING --log-file-verbosity=WARNING --insecure --join=crdb-0
     depends_on:
