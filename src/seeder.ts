@@ -11,7 +11,7 @@ const setRandomWriter = async (connection: Connection) : Promise<Writer> =>  {
     const writer = new Writer();
     writer.firstName = faker.name.firstName();
     writer.lastName = faker.name.lastName();
-    writer.email = `${writer.firstName}.${writer.lastName}@${faker.internet.domainName()}.${faker.internet.domainSuffix()}`
+    writer.email = `${writer.firstName}.${writer.lastName}@${faker.lorem.word(15)}.${faker.internet.domainSuffix()}`
 
     await repository.save(writer);
 
